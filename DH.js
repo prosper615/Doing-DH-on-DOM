@@ -109,11 +109,152 @@ ObiSubmit.addEventListener("click" , ()=>{
 
 
 
+//  Now am trying to implement Miller-Rabin primality test 
+
+
+function Miller_Rabin ( N ) {
+
+
+let P = N - 1
+
+let TheBase = 2
+
+let TheExponent = 1
+
+// let IterationCount = 0
+
+// it seems like am gonna put the results into an array in order to keep a count of them
+
+
+let PutInArray = [];
+
+let EquatingPowerK 
+
+let EquatingPowerM
 
 
 
 
 
+
+while( P % (TheBase ** TheExponent ) === 0 ){
+
+    let TheResultOfDiv = P / ( TheBase** TheExponent) 
+
+    console.log( `${TheResultOfDiv}`)
+
+
+    PutInArray.push(TheResultOfDiv)
+
+
+   TheExponent++
+
+
+
+     
+}
+
+ 
+EquatingPowerK = PutInArray.length
+
+console.log(EquatingPowerK)
+
+EquatingPowerM = EquatingPowerK + 1
+
+// console.log( EquatingPowerM)
+
+let TheRemainder = P / TheBase ** EquatingPowerK
+
+console.log( TheRemainder)
+
+
+
+
+
+
+
+// Now checking for eqaulity based on a formula in Miller-Rabin computation
+
+if( P === 2**EquatingPowerK * TheRemainder ){
+
+
+    console.log( "Am a computer wizard")
+
+
+}
+
+
+else {
+
+console.log( "I love software engineering and also to hack on cool stuffs ")
+ 
+
+}
+
+
+// Now there is more steps to take here
+
+// Via the formula for computing Miller-Rabin primality test, we must find a number which satisfies below
+
+// let call the number T. 1 < T < n-1
+
+//  Implementing the condnition above
+
+let T = Math.floor(Math.random() * (P - 2)) + 2
+
+if( T < P){
+
+console.log("The test  have been passed " )
+
+
+}
+
+else{
+
+console.log( "Let's find another approach")
+
+
+
+}
+
+// Now am going into the next step of checking for prime using Miller-Rabin algorithm
+
+
+
+
+
+
+
+}
+
+
+
+
+Miller_Rabin ( 561 )
+
+
+
+
+
+
+
+// What is the difference and effect of the two different approach in a code below
+
+
+
+// console.log(2**3);
+
+// console.log( Math.pow( 2, 3))
+
+
+
+// Testing something
+
+const NotBeyond = 8;
+
+const TestNotBeyond = Math.floor( Math.random() * (NotBeyond - 2)) + 2
+
+console.log( TestNotBeyond)
 
 
 
