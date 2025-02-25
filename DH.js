@@ -85,7 +85,13 @@ AdaSubmit.addEventListener("click", ()=>{
 
 
 
-ObiSubmit.addEventListener("click" , ()=>{ 
+ObiSubmit.addEventListener("click" , ()=>{
+    
+    // This function placed here is for testing, would delete later
+
+    CheckPrimitiveRoot () 
+
+
 
 
 })
@@ -134,9 +140,6 @@ let EquatingPowerM
 
 
 
-
-
-
 while( P % (TheBase ** TheExponent ) === 0 ){
 
     let TheResultOfDiv = P / ( TheBase** TheExponent) 
@@ -170,9 +173,6 @@ console.log( TheRemainder)
 
 
 
-
-
-
 // Now checking for eqaulity based on a formula in Miller-Rabin computation
 
 if( P === 2**EquatingPowerK * TheRemainder ){
@@ -196,7 +196,7 @@ console.log( "I love software engineering and also to hack on cool stuffs ")
 
 // Via the formula for computing Miller-Rabin primality test, we must find a number which satisfies below
 
-// let call the number T. 1 < T < n-1
+// let call the number T.  The condition to be fuffilled : 1 < T < n-1
 
 //  Implementing the condnition above
 
@@ -218,10 +218,6 @@ console.log( "Let's find another approach")
 }
 
 // Now am going into the next step of checking for prime using Miller-Rabin algorithm
-
-
-
-
 
 
 
@@ -255,6 +251,58 @@ const NotBeyond = 8;
 const TestNotBeyond = Math.floor( Math.random() * (NotBeyond - 2)) + 2
 
 console.log( TestNotBeyond)
+
+
+// I can't continue coding now because i have to first learn how to get  the
+
+// primitive root of a prime number and also finish up on that Miller-Rabin algorithm
+
+
+
+// My text project should be implementing a crytographic concept in ts. Then do something in React
+
+//  And all in into blockchain development
+
+// For  now let me go and read my book, crytography to be precise 
+
+
+// Now i have learnt how to check for the primitive root
+
+// Now Implementing it
+
+
+const  AdaPrimitive = document.getElementById("AdaPrimitive")
+
+const ObiPrimitive = document.getElementById("ObiPrimitive")
+
+
+
+// Now it seems like am gonna implement this using a function
+
+function CheckPrimitiveRoot () {
+
+
+let GetObiPrimitiveValue = ObiPrimitive.value
+
+
+let  GetAdaPrimitiveValue = AdaPrimitive.value 
+
+console.log( GetObiPrimitiveValue)
+
+console.log(GetAdaPrimitiveValue)
+
+
+
+    
+}
+
+
+
+
+
+
+
+
 
 
 
