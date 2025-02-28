@@ -149,6 +149,8 @@ while( P % (TheBase ** TheExponent ) === 0 ){
      
 }
 
+
+
 EquatingPowerK = PutInArray.length
 
 
@@ -166,7 +168,7 @@ let TheRemainder = P / TheBase ** EquatingPowerK
 
 // let T = Math.floor(Math.random() * (P - 2)) + 2
 
-let T = 2  // using 2 tempoarily to confirm some certain calculations
+let T = 2// using 2 tempoarily to confirm some certain calculations
 
 
 // Now am going into the next step of checking for prime using Miller-Rabin algorithm
@@ -179,33 +181,80 @@ console.log(CompositeOrPrime);
 
 // Now implementing the condition that checks if the number is a prime numbe ror a coprime
 
+
+// This else statement is tricky here cos we are checking if the remainder is 
+
+// -1 which is equivalently to N-1, but in terms of how programming lang..s works 
+
+
+
 if( CompositeOrPrime % N == 1){
 
-console.log("This is a composite number " )
+    console.log("This is a composite number " )
+    
+    
+    }
+/*
 
+else if( CompositeOrPrime % N == N - 1 ){
 
-}
-
-else if( CompositeOrPrime % N == -1){
 
 
 console.log( "This is probably a prime numbber " + "\n" + "This is due to the presence of a kind of number could pass the primality test known as Carmicheals number")
 
 }
 
+*/
+
+
 else{
 
+// Remember  CompositeOrPrime = T ** TheRemainder  %  N as s ealier indicated
 
-while( CompositeOrPrime !== 1 || CompositeOrPrime !== -1){
-
-
-let CompositeOrPrimeSwap = CompositeOrPrime **2  % N
+  let HoldItTemp = CompositeOrPrime
 
 
-console.log(CompositeOrPrimeSwap)
+  console.log ( `This is ${HoldItTemp}`)
+
+while( HoldItTemp !== 1   /* || HoldItTemp !== N-1  */ ){
+
+    HoldItTemp = HoldItTemp ** 2 % N;
+
+console.log(HoldItTemp)
 
 
-CompositeOrPrimeSwap = CompositeOrPrime
+
+
+if( HoldItTemp === 1){
+
+console.log("This is a composite number ")
+
+}
+
+else {
+
+console.log( "Maybe it's not a composite  number")
+
+
+}
+
+/*
+// else if (HoldItTemp === N - 1) {
+
+// console.log("This is probably a prime number. " + "\n" + "This is due  Carmicheal's numbers which could pass the primality test  ")
+
+
+
+
+// }
+
+
+*/
+
+
+
+
+}
 
 
 
@@ -214,33 +263,17 @@ CompositeOrPrimeSwap = CompositeOrPrime
 }
 
 
-}
-
-
-
-
- 
-
 
 
 }
-
-
 
 
 Miller_Rabin ( 561 )
 
+// Miller_Rabin(7)
 
+// Miller_Rabin(997)
 
-
-
-
-
-// What is the difference and effect of the two different approach in a code below
-
-// console.log(x**y);
-
-// console.log( Math.pow( x, y)
 
 
 
@@ -282,11 +315,8 @@ console.log("Your primitive roots are the same")
 
 
 
-
-
-
-
 }
+
 
 
 
@@ -303,22 +333,10 @@ let GetAdaPrimeNumber =  AdaPrimeNumber.value;
 let IfTheyareEqual
 
 
-// console.log(GetAdaPrimeNumber)
-
-// console.log(GetObiPrimeNumber)
-
-
-// Just tempoarily placing this here, will implement it up there.
-
-// I think checking the primitive root would be after we have checked if they have the same prime number
-
 
 if ( GetObiPrimeNumber == GetAdaPrimeNumber){
 
 IfTheyareEqual = GetObiPrimeNumber   // i can  also equate it to AdaPrimeNumber since they are equal
-
-
-// console.log(IfTheyareEqual)
 
 // If the choosen primitive roots are equaal then this has to happen to it
 
@@ -363,14 +381,27 @@ console.log( DuplicateCompare)
 
 if( PushSeePrimitiveResults.length == DuplicateCompare.size){
 
-console.log( "This is the primitive prime")
+console.log( `This is the primitive prime of the number ${IfTheyareEqual}`)
+
 
 
 }
 
 else{
 
-console.log( "This is not the realative prime")
+    console.log( `This is not the primitive prime of the number ${IfTheyareEqual}`)
+
+}
+
+
+
+}
+
+
+else{
+
+console.log("Ada and Obi should choose the samme prime number" )
+
 
 }
 
@@ -381,35 +412,32 @@ console.log( "This is not the realative prime")
 
 
 
+const TestCongrugence = 69
+
+
+if ( TestCongrugence - 1  % TestCongrugence  === - 1){
+
+
+console.log("I love crytography so much" )
+
+
 }
 
+else{
 
-// Testing out something out rn
-
-
-console.log( "Am a computer wizard " + "\n" + "Am a software engineering wizard" + "\n" + "Am a blockchain wizard")
-
-
-
-
-let  TryIt = 10;
-
-let TryIt2 = 6;
-
-
-while( TryIt + TryIt2 < 100){
-
-console.log("Until it's up to 100")
-
-TryIt +=  TryIt2
-
-TryIt2 = TryIt;
-
+console.log( "Am a blockchain wizard")
 
 
 }
 
 
+
+console.log( -1 % 5)
+
+
+
+
+  
 
 
 

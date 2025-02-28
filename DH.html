@@ -22,11 +22,25 @@
 <body>
 
 <!--  Obi and Ada is a common venecular name for a boy and girl where i come from -->
+
+
+<h1> Hints</h1>
+
+<p> Both parties must choose the same prime number. It's called " The agreed prime number" </p>
+
+<p> A primitive root 'r'  of a prime number is a number 'n' such that r^1 - r^n-1 has a distinct result </p>
+
+<p> Don't worry input any number you think is the primitive root, would help check it out</p>
     
 
    <h2>Ada</h2>
       
  <input type="number" placeholder=" Input the agreed prime number, prefreably large"  id="AdaPrimeNumber">
+
+
+
+ <input type="number" placeholder=" Input the primitive root of the prime number"  id="AdaPrimitive">
+
 
  <input type="number" placeholder=" input secret key"  id="AdaSameSecretKey">
 
@@ -39,9 +53,18 @@
 
  <input type="number" placeholder="Input the agreed prime number, prefreably large" id="ObiPrimeNumber">
 
+
+
+ <input type="number" placeholder=" Input the primitive root of the prime number"  id="ObiPrimitive">
+
+
  <input type="number" placeholder="input secret key"  id="ObiSameSecretKey">
 
  <button id="ObiSubmit"  > Obi  </button>
+
+
+
+ <Button onclick="ConstructPrimitive ()"> Construct Prime</Button>
 
         
 
