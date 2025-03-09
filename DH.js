@@ -1,16 +1,34 @@
 
 
-
 // Here am trying to simply implement Deffie-Hellman crytography in a simple way. This is the way it usually 
 // works with exceptions of some little other stuffs. Showing this on the Dom is simply stupid of me and my 
 // stupid codes are just so stupid
 
 
+document.addEventListener("DOMContentLoaded" , ()=>{
 
 
-const AdaSameSecretKey = document.getElementById("AdaSameSecretKey" );
 
-const ObiSameSecretKey = document.getElementById("ObiSameSecretKey");
+
+const letagree = document.getElementById("letagree");
+
+letagree.disabled = true
+
+
+
+const letcheck = document.getElementById("letcheck")
+
+letcheck.disabled = true;
+
+
+
+
+
+
+const AdaSecretKey = document.getElementById("AdaSecretKey" );
+
+const ObiSecretKey = document.getElementById("ObiSecretKey");
+
 
 
 const AdaPrimeNumber = document.getElementById("AdaPrimeNumber");
@@ -26,9 +44,85 @@ const ObiSubmit = document.getElementById("ObiSubmit");
 
 
 
+const  AdaPrimitive = document.getElementById("AdaPrimitive")
+
+const ObiPrimitive = document.getElementById("ObiPrimitive")
+
+
+
+// I want to first compare if the values of prime and primitive root are the same before enabling the button
+// which checks for primality and if they are primitive root of the prime
+
+
+function CompareIfThesame (){
+
+if(ObiPrimeNumber.value === AdaPrimeNumber.value && ObiPrimitive.value === AdaPrimitive.value && ObiPrimeNumber.value !== "" && AdaPrimeNumber.value !== "" && ObiPrimitive.value !== "" && AdaPrimitive.value !== "" ){
+
+
+letcheck.disabled = false
+
+console.log("matched")
+
+
+}
+
+else{
+
+    console.log("matched nope")
+
+    letcheck.disabled = true
+
+
+}
+
+
+
+
+}
+
+
+
+ObiPrimeNumber.addEventListener("keyup", CompareIfThesame)
+
+AdaPrimeNumber.addEventListener("keyup", CompareIfThesame)
+
+ObiPrimitive.addEventListener("keyup", CompareIfThesame)
+
+AdaPrimitive.addEventListener("keyup", CompareIfThesame)
+
+
+
+
+
+
+
+
+
+function me(){
+
+console.log("Am a sweet software engineer")
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 // I think i should write a code which checks for wheather the input is a prime number or not
+
+
+
+
+
+
 
 // It's hard to test for prime numbers so am looking for an algorithm that would be cool with that
 
@@ -66,20 +160,21 @@ function Miller_Rabin ( N ){
 
   
     // So i think i should accept the obvious smallest prime numbers like 2,3,5 without much check
-     if ( N ===2 || N===3 || N===5){
+     if ( N ===2 || N===3 || N===5  || N ==7){
 
 console.log( `${N} is a prime number` )
 
-// return
+return
 
     }
 
 // Not good to waste time doing the primality test without checking if can be divided by the first 10 digits atleast
 
 // If can be divided by the above without remainder obviously means it's not prime
- if (N % 2 !== 0   /*|| N %  3!== 0 || N %  4!== 0 || N %  !5== 0 || N %  6!== 0 || N %  7!== 0  || N %  8!== 0  || N %  9!== 0 || N %  10!== 0 */){
+// Coming back to this should likely be == and not !==. yooo brb
+ if (N % 2 == 0   || N %  3 == 0 || N %  4 == 0 || N % 5== 0 || N %  6 == 0 || N %  7== 0  || N %  8== 0  || N %  9== 0 || N %  10== 0 ){
 
-console.log("This is not a prime number")
+console.log(`${N} is not a prime numberrr`)
 
 }
 
@@ -87,7 +182,9 @@ console.log("This is not a prime number")
     // Should have only used trail division method but having anamalous behaivour with large prime
 
 
+// else if ( )
 
+else{
 
 let P = N - 1
 
@@ -159,6 +256,8 @@ if( CompositeOrPrime % N == 1){
     
     }
 
+    /*
+
 else if( CompositeOrPrime % N == N - 1 ){
 
 
@@ -166,6 +265,8 @@ else if( CompositeOrPrime % N == N - 1 ){
 console.log( "This is probably a prime numbber " + "\n" + "This is due to the presence of a kind of number could pass the primality test known as Carmicheals number")
 
 }
+
+*/
 
 
 
@@ -176,13 +277,11 @@ else{
   let HoldItTemp = CompositeOrPrime
 
 
-//   console.log ( `This is ${HoldItTemp}`)
 
-while( HoldItTemp !== 1    /* HoldItTemp !== N-1 */   ){
+while( HoldItTemp !== 1      ){
 
     HoldItTemp = HoldItTemp ** 2 % N;
 
-// console.log(HoldItTemp)
 
 
 if( HoldItTemp === 1){
@@ -194,7 +293,7 @@ console.log("This is a composite number  !!")
 
 
 // Seems like the condition below is not the suppose way of getting the remainder to be equivalent to -1
-  else  if(HoldItTemp === -1 )  {
+  else  if(-1=== N - 2 * HoldItTemp )  {
 
     console.log("This is probably a prime number. " + "\n" + "This is due  Carmicheal's numbers which could pass the primality test  ")
 
@@ -203,32 +302,29 @@ console.log("This is a composite number  !!")
 }
 
 
-}
-
-
-
-}
 
 }
 
 
+}
+
+// lalala
+
+}
 
 
 
 
 
+}
 
 
 
 
 
-Miller_Rabin ( 561 )
+Miller_Rabin ( 21 )
 
-// Miller_Rabin(3)
 
-// Miller_Rabin(997)
-
-// Miller_Rabin(53)
 
 
 
@@ -242,9 +338,6 @@ Miller_Rabin ( 561 )
 // Here am checking if both selected the same primitive root. cos both primitive roots must be the same
 
 
-const  AdaPrimitive = document.getElementById("AdaPrimitive")
-
-const ObiPrimitive = document.getElementById("ObiPrimitive")
 
 
 
@@ -424,29 +517,93 @@ BothAgrees ()
 ConstructPrimitive () 
 
 
-/*
-let AccessObiPrime = ObiPrimeNumber.value;
-
-let AccessAdaPrime = AdaPrimeNumber.value
 
 
-// I want to take the test on primality only if the prime number input is the same
-
-if( AccessObiPrime ==  AccessAdaPrime){
-
-
-    Miller_Rabin ( )
 
 }
 
-else {
+
+// Now i want to get the values of the secret key of both Obi and Ada. in the real world its kept 
+// secret and both parties are not meant to see the one of each other respectively
 
 
-console.log("Both you should agree on the same prime number" )
+
+
+
+
+
+
+
+
+
+
+function LetsAgree(){
+
+
+    // The formula for the value which both parties compute is and sends to each other if
+    // it in irl usecase implementation is :
+    //  agreed primitive of the choosen agreed prime raised to power the secret key modular the choosen agreed prime
+
+
+const AdaSecretKeyValue = AdaSecretKey.value;
+// This is the value Ada sends Obi irl scenario. 
+const AdaSendValue = AdaPrimitive.value ** AdaSecretKeyValue % AdaPrimeNumber.value
+
+console.log(AdaSendValue)
+
+
+
+
+const ObiSecretKeyValue = ObiSecretKey.value
+
+// This is the value Obi sends to Ada irl scenario
+const ObiSendValue =  ObiPrimitive.value ** ObiSecretKeyValue % ObiPrimeNumber.value;
+
+console.log(ObiSendValue)
+
+
+
+
+
+// Now the next step is Obi and Ada's computation respectively
+
+// irl/ in useable scenario
+
+// Obi computes  AdaSendValue**ObiSecretKeyValue % ObiPrimeNumber.value ( yeah, same as agreed prime cos both
+// must agree on the same prime so Obi's prime same as Ada)  and vice versa
+
+
+ ObiComputes =  AdaSendValue**ObiSecretKeyValue % ObiPrimeNumber.value;
+
+ 
+
+ console.log( ObiComputes)
+
+
+ 
+ AdaComputes = ObiSendValue ** AdaSecretKeyValue % AdaPrimeNumber.value;
+
+ console.log( AdaComputes)
+
+
+ // The  two computations by Obi and Ada is going to the result in the same value which is their secret key
+
+ // Thats the trick of Deffie-Hellman key exchange
+
+
+
 
 }
 
-*/
 
 
-}
+
+
+
+})
+
+
+
+
+
+
