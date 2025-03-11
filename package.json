@@ -1,0 +1,24 @@
+{
+  "name": "dh-js",
+  "version": "1.0.0",
+  "description": "Kinda doing DH key exchange on the DOM",
+  "main": "DH.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "keywords": [
+    "DH",
+    "key",
+    "exchange",
+    "Miller-Raabin",
+    "algorithm",
+    "modular",
+    "arithemetics"
+  ],
+  "author": "Prosper Chidera .C.",
+  "license": "ISC"
+}
+
+
+
+

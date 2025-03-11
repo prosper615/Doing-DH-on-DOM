@@ -21,54 +21,80 @@
 
 <body>
 
-<!--  Obi and Ada is a common venecular name for a boy and girl where i come from -->
 
 
-<h1> Hints</h1>
+<!--  Obi and Ada is a common venecular name for a boy and girl respectively where i come from -->
+
+<!--  Sooo sorry am not using react for this -->
+
+<p>Hi there, this is a simple implementation of the Diffie-Hellman key exchange algorithm on the DOM   &#128578; &#128273; &#129309; </p>
+
+<h2> Hints</h2>
 
 <p> Both parties must choose the same prime number. It's called " The agreed prime number" </p>
 
-<p> A primitive root 'r'  of a prime number is a number 'n' such that r^1 - r^n-1 has a distinct result </p>
+<p> Both must have the same primitive root of the agreed prime number </p>
 
-<p> Don't worry input any number you think is the primitive root, would help check it out</p>
+<p> The steps outlined above must be followed to ensure the Diffie-Hellman key exchange is executed as intended</p>
+
+
+
+
+
+<div class="container">
+
+  
+
+   <div class="person">
     
-
-   <h2>Ada</h2>
+    <h2>Ada</h2>
       
- <input type="number" placeholder=" Input the agreed prime number, prefreably large"  id="AdaPrimeNumber">
+ <input type="number" placeholder=" Input the agreed prime number, prefreably large"  id="AdaPrimeNumber" min="1">
+
+ <input type="number" placeholder=" Input the primitive root of the prime number"  id="AdaPrimitive"  min="1">
+
+ <input type="number" placeholder=" input secret key"  id="AdaSecretKey" min="1">
+
+
+</div>
+
+
+  
+
+
+  <div class="person">
+    
+    <h2>Obi</h2>
+
+ <input type="number" placeholder="Input the agreed prime number, prefreably large" id="ObiPrimeNumber" min="1">
+
+ <input type="number" placeholder=" Input the primitive root of the prime number"  id="ObiPrimitive" min="1">
+
+
+ <input type="number" placeholder="input secret key"  id="ObiSecretKey" min="1">
+
+</div>
+
+
+</div>
 
 
 
- <input type="number" placeholder=" Input the primitive root of the prime number"  id="AdaPrimitive">
+
+ <button id="letcheck">  Let's Check </button>
+ 
+  <button id="letagree" > Let's Agree </button> <br>
 
 
- <input type="number" placeholder=" input secret key"  id="AdaSameSecretKey">
-
-<button id="AdaSubmit">  Ada </button>
-
-            
-
-
-  <h2>Obi</h2>
-
- <input type="number" placeholder="Input the agreed prime number, prefreably large" id="ObiPrimeNumber">
+  <p> Results  &#128578; &#128273; &#129309; would be displayed below :</p>
 
 
 
- <input type="number" placeholder=" Input the primitive root of the prime number"  id="ObiPrimitive">
 
 
- <input type="number" placeholder="input secret key"  id="ObiSameSecretKey">
-
- <button id="ObiSubmit"  > Obi  </button>
-
-
-
- <Button onclick="ConstructPrimitive ()"> Construct Prime</Button>
-
-        
+  
 
     
-    <script src="DH.js"></script>
+    <script  type="module"   src="DH.js"></script>
 </body>
 </html>
