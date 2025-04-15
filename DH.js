@@ -10,9 +10,12 @@ import { ConstructPrimitive } from "./ConstructPrimitive.js";
 
 import { CompareIfThesame } from "./CompareItthesame.js";
 
-import { Miller_Rabin } from "./MillerRabin.js";
+// import { Miller_Rabin } from "./MillerRabin.js";
 
 import { BothAgrees } from "./BothAgree.js";
+
+
+import { TrailDivision } from "./DivisionTrail.js";
 
 
 
@@ -25,12 +28,6 @@ import { BothAgrees } from "./BothAgree.js";
 document.addEventListener("DOMContentLoaded" , ()=>{
 
 
-
-
-
-
-
-    
 
 
 const AdaSecretKey = document.getElementById("AdaSecretKey" );
@@ -73,8 +70,12 @@ letcheck.disabled = true
 
 letcheck.addEventListener("click", ()=>{
 
+// Switched to trial division for now
+// Miller_Rabin() 
 
-Miller_Rabin()
+
+TrailDivision()
+
 
 ConstructPrimitive()
 
@@ -85,8 +86,6 @@ letagree.disabled = false
 
 
 })
-
-
 
 
 
@@ -102,12 +101,12 @@ letagree.addEventListener("click", ()=>{
 
 
 
-
-
-
-
-
 })
+
+
+
+
+
 
 
 
