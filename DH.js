@@ -10,8 +10,6 @@ import { ConstructPrimitive } from "./ConstructPrimitive.js";
 
 import { CompareIfThesame } from "./CompareItthesame.js";
 
-// import { Miller_Rabin } from "./MillerRabin.js";
-
 import { BothAgrees } from "./BothAgree.js";
 
 
